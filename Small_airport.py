@@ -130,7 +130,7 @@ if __name__ == "__main__":
             flight_number = generate_fake_flight_number()
             landing.insert(flight_number, random.choices([0, 1], weights=[0.95, 0.05])[0]) #The landings have a 95% chance of having a regular landing, while 5% of them have an emergency landing.
             print(f"\nFlight {flight_number} requesting landing clearance.")
-            action2 = 'Wait' #Randomly choosing to let the landing proceed or wait (mostly to have a chance to populate the landing queue).
+            action2 = random.choice(['Wait', 'Land']) #Randomly choosing to let the landing proceed or wait (mostly to have a chance to populate the landing queue).
             if action2 == 'Land':
                 print(f"Flight {flight_number} cleared for landing.")
                 landing.successful()
